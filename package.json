@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/mohayonao/neqndeq/issues"
   },
+  "dependencies": {
+    "deep-equal": "^1.0.1"
+  },
   "devDependencies": {
     "eslint": "^3.8.1",
     "mocha": "^3.1.2",
