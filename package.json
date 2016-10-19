@@ -1,0 +1,41 @@
+{
+  "name": "neqndeq",
+  "description": "if Not EQual then should Not Deep EQual",
+  "version": "0.0.0",
+  "author": "Nao Yonamine <mohayonao@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/mohayonao/neqndeq/issues"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "mocha": "^3.1.2",
+    "npm-run-all": "^3.1.1",
+    "nyc": "^8.3.1",
+    "run-with-mocha": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/mohayonao/neqndeq/",
+  "keywords": [
+    "compare",
+    "equal",
+    "test"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohayonao/neqndeq.git"
+  },
+  "scripts": {
+    "clean": "rm -rf coverage .nyc_output npm-debug.log",
+    "cover": "nyc --reporter text --reporter html npm test",
+    "lint": "eslint lib test",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm-run-all clean lint test",
+    "preversion": "npm-run-all clean lint test",
+    "test": "mocha",
+    "travis": "npm-run-all lint test"
+  }
+}
